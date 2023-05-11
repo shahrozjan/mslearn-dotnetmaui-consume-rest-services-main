@@ -12,7 +12,6 @@ namespace PartsClient.Data
 {
     public static class PartsManager
     {
-        // TODO: Add fields for BaseAddress, Url, and authorizationKey
         static readonly string BaseAddress = "https://mslearnpartsserver3174812949.azurewebsites.net/";
         static readonly string Url = $"{BaseAddress}/api/";
         private static string authorizationKey;
