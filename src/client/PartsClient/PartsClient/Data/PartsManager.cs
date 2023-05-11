@@ -69,11 +69,11 @@ namespace PartsClient.Data
             return insertedPart;
         }
 
-        public static async Task Update(Part part)
+        public static async Task Update(Part part1)
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet) return;
-            HttpRequestMessage msg = new(HttpMethod.Put, $"{Url}parts/{part.PartName}");
-            msg.Content = JsonContent.Create < Part > (part);
+            HttpRequestMessage msg = new(HttpMethod.Put, $"{Url}parts/{part1.PartName}");
+            msg.Content = JsonContent.Create < Part > (part1);
             HttpClient client = await GetClient();
             var response = await client.SendAsync(msg);
             response.EnsureSuccessStatusCode();
